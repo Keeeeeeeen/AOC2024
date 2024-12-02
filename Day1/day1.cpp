@@ -66,6 +66,19 @@ int main() {
     for (int j = 0; j < length1; ++j){
         totalDistance = totalDistance + distances[j];
     }
-    cout << totalDistance;
+    cout << totalDistance << " ";
+    int similarityScore = 0;
+    for (int k = 0; k < length1; ++k){
+        int sameCounter = 0;
+        for (int l = 0; l < length1; ++l)
+        {
+            if (list2[l] == list1[k] )
+            {
+                sameCounter = sameCounter + 1;
+            }
+        }
+        similarityScore+=list1[k]*sameCounter;
+    }
+    cout << similarityScore;
     return 0;
 }
